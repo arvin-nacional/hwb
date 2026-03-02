@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Kate Seymour · Instructor</title>
+    <!-- Font Awesome 6 (free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* ----- RESET & BASE ----- */
+        .about-embed * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .about-embed {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.5;
+            color: #1f2937;
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+            background: #fefaf5; /* warm off‑white */
+        }
+
+        /* ----- COLOR VARIABLES (primary #651E1F) ----- */
+        .about-embed {
+            --primary: #651E1F;
+            --primary-light: #8b4b4c;
+            --primary-foreground: #ffffff;
+            --muted: #f3eee9;
+            --muted-foreground: #5c4e4d;
+            --border-muted: #dcd2cd;
+        }
+
+        /* ----- TYPOGRAPHY & UTILITIES ----- */
+        .about-embed .text-center { text-align: center; }
+        .about-embed .max-w-5xl { max-width: 64rem; }
+        .about-embed .mx-auto { margin-left: auto; margin-right: auto; }
+        .about-embed .font-serif { font-family: Georgia, 'Times New Roman', serif; }
+        .about-embed .font-bold { font-weight: 700; }
+        .about-embed .text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+        .about-embed .text-3xl { font-size: 1.875rem; }
+        .about-embed .text-lg { font-size: 1.125rem; }
+        .about-embed .text-base { font-size: 1rem; }
+        .about-embed .text-sm { font-size: 0.875rem; }
+        .about-embed .text-muted-foreground { color: var(--muted-foreground); }
+        .about-embed .text-primary { color: var(--primary); }
+
+        /* spacing */
+        .about-embed .space-y-2 > * + * { margin-top: 0.5rem; }
+        .about-embed .space-y-3 > * + * { margin-top: 0.75rem; }
+        .about-embed .space-y-4 > * + * { margin-top: 1rem; }
+        .about-embed .space-y-6 > * + * { margin-top: 1.5rem; }
+        .about-embed .space-y-12 > * + * { margin-top: 3rem; }
+
+        .about-embed .mb-12 { margin-bottom: 3rem; }
+        .about-embed .mt-0\.5 { margin-top: 0.125rem; }
+        .about-embed .pt-6 { padding-top: 1.5rem; }
+        .about-embed .py-16 { padding-top: 4rem; padding-bottom: 4rem; }
+        .about-embed .px-4 { padding-left: 1rem; padding-right: 1rem; }
+
+        /* grid */
+        .about-embed .grid {
+            display: grid;
+            gap: 3rem;
+            align-items: start;
+        }
+        @media (min-width: 768px) {
+            .about-embed .md\:grid-cols-3 {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .about-embed .md\:col-span-2 {
+                grid-column: span 2 / span 2;
+            }
+            .about-embed .md\:py-24 {
+                padding-top: 6rem;
+                padding-bottom: 6rem;
+            }
+            .about-embed .md\:px-8 {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+            .about-embed .md\:text-5xl {
+                font-size: 3rem;
+                line-height: 1;
+            }
+        }
+
+        /* cards / image */
+        .about-embed .rounded-lg {
+            border-radius: 0.75rem;
+        }
+        .about-embed .overflow-hidden {
+            overflow: hidden;
+        }
+        .about-embed .shadow-lg {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .about-embed img {
+            display: block;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        /* check icon style */
+        .about-embed .flex-items-start {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+        }
+        .about-embed .check-icon {
+            width: 1.25rem;
+            height: 1.25rem;
+            color: var(--primary);
+            flex-shrink: 0;
+            margin-top: 0.125rem;
+            font-size: 1.25rem;
+        }
+    </style>
+</head>
+<body style="margin:0; background: #f4ede8; display: flex; justify-content: center;">
+    <!-- ========== EMBED THIS ABOUT SECTION ========== -->
+    <div class="about-embed">
+        <section id="about" class="px-4 py-16 md:py-24 md:px-8">
+            <div class="max-w-5xl mx-auto space-y-12">
+                <!-- header -->
+                <div class="text-center space-y-4 mb-12">
+                    <h2 class="text-4xl md:text-5xl font-serif font-bold" style="color: #651E1F;">Meet the Instructor</h2>
+                    <p class="text-lg text-muted-foreground">Internationally recognized conservation leader</p>
+                </div>
+
+                <!-- main content grid -->
+                <div class="grid md:grid-cols-3 gap-12 items-start">
+                    <!-- left column (2/3 width) -->
+                    <div class="md:col-span-2 space-y-6">
+                        <h3 class="text-3xl font-serif font-bold" style="color: #651E1F;">Kate Seymour</h3>
+                        <div class="space-y-4 text-muted-foreground leading-relaxed">
+                            <p>
+                                Kate Seymour is an internationally recognized paintings conservator, educator, and advocate for art conservation. With a background in Art History (University of Aberdeen, 1994) and a Master's in Painting Conservation (University of Northumbria, 1999), Kate has spent over two decades advancing the science and craft of conservation.
+                            </p>
+                            <p>
+                                Based in the Netherlands, she served as Head of Education at SRAL for 25 years, training future conservators and pioneering best practices. She has lectured extensively at the University of Amsterdam and Maastricht University, specializing in conservation science, techniques, and materials analysis.
+                            </p>
+                            <p>
+                                Her technical expertise spans the structural treatment of canvas and panel paintings, cleaning, retouching, and varnishing. She has led conservation workshops across Europe, India, Mexico, and Russia, and directed major international initiatives supported by the Mellon and Getty Foundations.
+                            </p>
+                        </div>
+
+                        <!-- achievements list with check icons -->
+                        <div class="space-y-3 pt-6">
+                            <div class="flex-items-start">
+                                <i class="fas fa-check-circle check-icon"></i>
+                                <span>Chair of ICOM-CC (International Council of Museums – Conservation Committee)</span>
+                            </div>
+                            <div class="flex-items-start">
+                                <i class="fas fa-check-circle check-icon"></i>
+                                <span>Founder of Art Conservation Education (ACE), Netherlands</span>
+                            </div>
+                            <div class="flex-items-start">
+                                <i class="fas fa-check-circle check-icon"></i>
+                                <span>Fellow of the IIC (International Institute for Conservation)</span>
+                            </div>
+                            <div class="flex-items-start">
+                                <i class="fas fa-check-circle check-icon"></i>
+                                <span>25+ years of hands-on conservation experience</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- right column (image) -->
+                    <div class="rounded-lg overflow-hidden shadow-lg" style="width: 100%; max-width: none;">
+                        <img 
+                            src="https://mcusercontent.com/586325cac2d38d2d2412ce5ec/images/55941938-ff93-4aaa-9b05-baf9ffa4ac0f.png"
+                            alt="Kate Seymour"
+                            loading="lazy"
+                            style="width: 100%; height: auto; min-height: 400px; object-fit: cover;"
+                        >
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- ========== END EMBED ========== -->
+</body>
+</html>

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Schedule</title>
+    <!-- Font Awesome 6 (free) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* RESET & FLUID CONTAINER */
+        .schedule-embed * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .schedule-embed {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.5;
+            color: #1f2937;
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;          /* prevents any accidental horizontal scroll */
+            box-sizing: border-box;
+            padding: 0 1rem;              /* keeps breathing room, but now it shrinks */
+        }
+
+        /* variables */
+        .schedule-embed {
+            --primary: #3b82f6;
+            --primary-foreground: #ffffff;
+            --muted: #f1f5f9;
+            --muted-foreground: #64748b;
+            --border-muted: #e2e8f0;
+            --background: #ffffff;
+        }
+
+        /* text utilities */
+        .schedule-embed .text-center { text-align: center; }
+        .schedule-embed .max-w-5xl { max-width: 64rem; }
+        .schedule-embed .mx-auto { margin-left: auto; margin-right: auto; }
+        .schedule-embed .font-serif { font-family: Georgia, 'Times New Roman', serif; }
+        .schedule-embed .font-bold { font-weight: 700; }
+        .schedule-embed .font-semibold { font-weight: 600; }
+
+        .schedule-embed .text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+        .schedule-embed .text-5xl { font-size: 3rem; line-height: 1; }
+        .schedule-embed .text-lg { font-size: 1.125rem; }
+        .schedule-embed .text-sm { font-size: 0.875rem; }
+        .schedule-embed .text-xs { font-size: 0.75rem; }
+
+        .schedule-embed .text-muted-foreground { color: var(--muted-foreground); }
+        .schedule-embed .text-primary { color: var(--primary); }
+        .schedule-embed .bg-primary { background-color: var(--primary); }
+        .schedule-embed .text-primary-foreground { color: var(--primary-foreground); }
+        .schedule-embed .bg-background { background-color: var(--background); }
+        .schedule-embed .bg-muted\/30 { background-color: rgba(241, 245, 249, 0.3); }
+        .schedule-embed .bg-primary\/5 { background-color: rgba(59, 130, 246, 0.05); }
+
+        /* spacing */
+        .schedule-embed .space-y-4 > * + * { margin-top: 1rem; }
+        .schedule-embed .space-y-6 > * + * { margin-top: 1.5rem; }
+        .schedule-embed .space-y-2 > * + * { margin-top: 0.5rem; }
+        .schedule-embed .space-y-1 > * + * { margin-top: 0.25rem; }
+
+        .schedule-embed .px-4 { padding-left: 1rem; padding-right: 1rem; }
+        .schedule-embed .py-16 { padding-top: 4rem; padding-bottom: 4rem; }
+        .schedule-embed .py-24 { padding-top: 6rem; padding-bottom: 6rem; }
+        .schedule-embed .p-6 { padding: 1.5rem; }
+        .schedule-embed .pt-4 { padding-top: 1rem; }
+
+        .schedule-embed .mb-12 { margin-bottom: 3rem; }
+        .schedule-embed .mb-3 { margin-bottom: 0.75rem; }
+        .schedule-embed .mb-2 { margin-bottom: 0.5rem; }
+        .schedule-embed .mb-1 { margin-bottom: 0.25rem; }
+        .schedule-embed .mt-4 { margin-top: 1rem; }
+        .schedule-embed .mt-1 { margin-top: 0.25rem; }
+        .schedule-embed .mt-8 { margin-top: 2rem; }
+        .schedule-embed .mt-12 { margin-top: 3rem; }
+
+        /* responsive */
+        @media (min-width: 768px) {
+            .schedule-embed .md\:py-24 { padding-top: 6rem; padding-bottom: 6rem; }
+            .schedule-embed .md\:px-8 { padding-left: 2rem; padding-right: 2rem; }
+            .schedule-embed .md\:text-5xl { font-size: 3rem; line-height: 1; }
+        }
+
+        /* card */
+        .schedule-embed .card {
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            border: 1px solid var(--border-muted);
+            transition: box-shadow 0.2s ease;
+            background: var(--background);
+        }
+        .schedule-embed .card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+        }
+
+        .schedule-embed .border-muted { border-color: var(--border-muted); }
+        .schedule-embed .border-t { border-top: 1px solid var(--border-muted); }
+
+        /* flex utilities */
+        .schedule-embed .flex { display: flex; }
+        .schedule-embed .flex-col { flex-direction: column; }
+        .schedule-embed .flex-start { align-items: flex-start; }
+        .schedule-embed .gap-2 { gap: 0.5rem; }
+        .schedule-embed .gap-4 { gap: 1rem; }
+        .schedule-embed .flex-shrink-0 { flex-shrink: 0; }
+
+        /* icon utilities */
+        .schedule-embed .w-4 { width: 1rem; }
+        .schedule-embed .h-4 { height: 1rem; }
+        .schedule-embed .w-6 { width: 1.5rem; }
+        .schedule-embed .h-6 { height: 1.5rem; }
+
+        /* list utilities */
+        .schedule-embed ul {
+            list-style: none;
+        }
+        .schedule-embed .text-primary { color: var(--primary); }
+        .schedule-embed .mt-1 { margin-top: 0.25rem; }
+    </style>
+</head>
+<body style="margin:0; background: #f8fafc; padding: 0; display: flex; justify-content: center;">
+    <!-- ========== EMBED THIS BLOCK ========== -->
+    <div class="schedule-embed">
+        <!-- Schedule -->
+        <section id="schedule" class="px-4 py-16 md:py-24 md:px-8 bg-muted/30">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center space-y-4 mb-12">
+                    <h2 class="text-4xl md:text-5xl font-serif font-bold">Program Schedule</h2>
+                    <p class="text-lg text-muted-foreground">April 20–25, 2026</p>
+                </div>
+
+                <div class="space-y-6">
+                    <!-- Conference Day -->
+                    <div class="card bg-background border-muted p-6 hover:shadow-md transition">
+                        <div class="space-y-4">
+                            <div>
+                                <p class="text-sm font-semibold text-primary mb-1">April 20, 2026</p>
+                                <h4 class="text-lg font-semibold mb-3">Conference Day</h4>
+                                <div class="flex flex-col gap-2 text-sm text-muted-foreground">
+                                    <span class="flex items-center gap-2">
+                                        <i class="fas fa-calendar w-4 h-4"></i>
+                                        9:00 AM – 4:00 PM
+                                    </span>
+                                    <span class="flex items-center gap-2">
+                                        <i class="fas fa-map-marker-alt w-4 h-4"></i>
+                                        Quezon City MICE Center
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="border-t border-muted pt-4 space-y-4">
+                                <div>
+                                    <h5 class="font-semibold text-sm mb-2">Plenary Sessions</h5>
+                                    <ul class="space-y-1">
+                                        <li class="text-sm text-muted-foreground flex items-start gap-2">
+                                            <span class="text-primary mt-1">•</span>
+                                            <span>Heritage Without Borders</span>
+                                        </li>
+                                        <li class="text-sm text-muted-foreground flex items-start gap-2">
+                                            <span class="text-primary mt-1">•</span>
+                                            <span>Disaster Preparedness</span>
+                                        </li>
+                                        <li class="text-sm text-muted-foreground flex items-start gap-2">
+                                            <span class="text-primary mt-1">•</span>
+                                            <span>Architectural and Historical Sites Conservation</span>
+                                        </li>
+                                        <li class="text-sm text-muted-foreground flex items-start gap-2">
+                                            <span class="text-primary mt-1">•</span>
+                                            <span>Protection of Philippine Heritage and Culture</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="font-semibold text-sm mb-2">Panel Discussion</h5>
+                                    <ul class="space-y-1">
+                                        <li class="text-sm text-muted-foreground flex items-start gap-2">
+                                            <span class="text-primary mt-1">•</span>
+                                            <span>Ms. Gemma Cruz-Araneta</span>
+                                        </li>
+                                        <li class="text-sm text-muted-foreground flex items-start gap-2">
+                                            <span class="text-primary mt-1">•</span>
+                                            <span>Kate Seymour</span>
+                                        </li>
+                                        <li class="text-sm text-muted-foreground flex items-start gap-2">
+                                            <span class="text-primary mt-1">•</span>
+                                            <span>Atty. Evecar Cruz-Ferrer</span>
+                                        </li>
+                                        <li class="text-sm text-muted-foreground flex items-start gap-2">
+                                            <span class="text-primary mt-1">•</span>
+                                            <span>Ar. Ysa Penas</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lecture Day 1 -->
+                    <div class="card bg-background border-muted p-6 hover:shadow-md transition">
+                        <div class="space-y-4">
+                            <div>
+                                <p class="text-sm font-semibold text-primary mb-1">April 21, 2026</p>
+                                <h4 class="text-lg font-semibold mb-3">Lecture Day 1: Dry Cleaning Method</h4>
+                                <div class="flex flex-col gap-2 text-sm text-muted-foreground">
+                                    <span class="flex items-center gap-2">
+                                        <i class="fas fa-calendar w-4 h-4"></i>
+                                        9:00 AM – 12:00 PM
+                                    </span>
+                                    <span class="flex items-center gap-2">
+                                        <i class="fas fa-map-marker-alt w-4 h-4"></i>
+                                        National Library of the Philippines
+                                    </span>
+                                    <span class="flex items-center gap-2 text-primary font-medium">
+                                        <i class="fas fa-users w-4 h-4"></i>
+                                        Kate Seymour
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lecture Day 2 -->
+                    <div class="card bg-background border-muted p-6 hover:shadow-md transition">
+                        <div class="space-y-4">
+                            <div>
+                                <p class="text-sm font-semibold text-primary mb-1">April 22, 2026</p>
+                                <h4 class="text-lg font-semibold mb-3">Lecture Day 2: Aqueous Cleaning Approaches</h4>
+                                <div class="flex flex-col gap-2 text-sm text-muted-foreground">
+                                    <span class="flex items-center gap-2">
+                                        <i class="fas fa-calendar w-4 h-4"></i>
+                                        9:00 AM – 12:00 PM
+                                    </span>
+                                    <span class="flex items-center gap-2">
+                                        <i class="fas fa-map-marker-alt w-4 h-4"></i>
+                                        National Library of the Philippines
+                                    </span>
+                                    <span class="flex items-center gap-2 text-primary font-medium">
+                                        <i class="fas fa-users w-4 h-4"></i>
+                                        Kate Seymour
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lecture Day 3 -->
+                    <div class="card bg-background border-muted p-6 hover:shadow-md transition">
+                        <div class="space-y-4">
+                            <div>
+                                <p class="text-sm font-semibold text-primary mb-1">April 23, 2026</p>
+                                <h4 class="text-lg font-semibold mb-3">Lecture Day 3: Solvent Cleaning Strategies</h4>
+                                <div class="flex flex-col gap-2 text-sm text-muted-foreground">
+                                    <span class="flex items-center gap-2">
+                                        <i class="fas fa-calendar w-4 h-4"></i>
+                                        9:00 AM – 12:00 PM
+                                    </span>
+                                    <span class="flex items-center gap-2">
+                                        <i class="fas fa-map-marker-alt w-4 h-4"></i>
+                                        Estuary Park
+                                    </span>
+                                    <span class="flex items-center gap-2 text-primary font-medium">
+                                        <i class="fas fa-users w-4 h-4"></i>
+                                        Kate Seymour
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lecture Day 4 -->
+                    <div class="card bg-background border-muted p-6 hover:shadow-md transition">
+                        <div class="space-y-4">
+                            <div>
+                                <p class="text-sm font-semibold text-primary mb-1">April 24, 2026</p>
+                                <h4 class="text-lg font-semibold mb-3">Lecture Day 4: Gel and Emulsion Cleaning</h4>
+                                <div class="flex flex-col gap-2 text-sm text-muted-foreground">
+                                    <span class="flex items-center gap-2">
+                                        <i class="fas fa-calendar w-4 h-4"></i>
+                                        9:00 AM – 12:00 PM
+                                    </span>
+                                    <span class="flex items-center gap-2">
+                                        <i class="fas fa-map-marker-alt w-4 h-4"></i>
+                                        National Library of the Philippines
+                                    </span>
+                                    <span class="flex items-center gap-2 text-primary font-medium">
+                                        <i class="fas fa-users w-4 h-4"></i>
+                                        Kate Seymour
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Closing Session -->
+                    <div class="card bg-background border-muted p-6 hover:shadow-md transition">
+                        <div class="space-y-4">
+                            <div>
+                                <p class="text-sm font-semibold text-primary mb-1">April 25, 2026</p>
+                                <h4 class="text-lg font-semibold mb-3">Closing Session</h4>
+                                <div class="flex flex-col gap-2 text-sm text-muted-foreground">
+                                    <span class="flex items-center gap-2">
+                                        <i class="fas fa-calendar w-4 h-4"></i>
+                                        9:00 AM – 12:00 PM
+                                    </span>
+                                    <span class="flex items-center gap-2">
+                                        <i class="fas fa-map-marker-alt w-4 h-4"></i>
+                                        Quezon City
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card bg-primary/5 border-primary p-6 mt-12">
+                    <div class="flex items-start gap-4">
+                        <i class="fas fa-graduation-cap w-6 h-6 text-primary flex-shrink-0"></i>
+                        <div>
+                            <h4 class="font-semibold mb-2">Workshop Training – June 2026 (Full Package Offer)</h4>
+                            <div class="bg-yellow-100 border border-yellow-300 rounded-lg p-3 mb-3">
+                                <div class="flex items-center gap-2">
+                                    <i class="fas fa-exclamation-triangle text-yellow-600"></i>
+                                    <p class="text-sm font-semibold text-yellow-800">LIMITED SLOTS ONLY. First Come, First Served</p>
+                                </div>
+                            </div>
+                            <p class="text-sm text-muted-foreground mb-3">
+                                The June 2026 workshop provides introductory lessons in art conservation, covering:
+                            </p>
+                            <div class="space-y-2 mb-3">
+                                <div class="flex items-start gap-2">
+                                    <i class="fas fa-flask text-primary mt-1" style="font-size: 0.875rem;"></i>
+                                    <span class="text-sm text-muted-foreground">Basic Conservation Chemistry</span>
+                                </div>
+                                <div class="flex items-start gap-2">
+                                    <i class="fas fa-palette text-primary mt-1" style="font-size: 0.875rem;"></i>
+                                    <span class="text-sm text-muted-foreground">Basic Painting Conservation</span>
+                                </div>
+                                <div class="flex items-start gap-2">
+                                    <i class="fas fa-balance-scale text-primary mt-1" style="font-size: 0.875rem;"></i>
+                                    <span class="text-sm text-muted-foreground">Conservation Ethics & Policies</span>
+                                </div>
+                                <div class="flex items-start gap-2">
+                                    <i class="fas fa-hands text-primary mt-1" style="font-size: 0.875rem;"></i>
+                                    <span class="text-sm text-muted-foreground">Hands-on sessions aligned with lectures delivered in April</span>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-2">
+                                <i class="fas fa-chalkboard-teacher text-primary mt-1" style="font-size: 0.875rem;"></i>
+                                <div>
+                                    <p class="text-sm text-muted-foreground">
+                                        Led by our local professors. Total of 15 sessions, 3 hours /session, Saturdays, June 6, 2026 (Tentative)
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- ========== END EMBED ========== -->
+</body>
+</html>
