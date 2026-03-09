@@ -1,0 +1,496 @@
+<!-- COMBINED CSS FOR ALL SECTIONS -->
+<style>
+/* ----- HERO SECTION STYLES ----- */
+.hero-embed * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.hero-embed {
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    color: #1f2937;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    background: #651E1F;
+}
+.hero-embed {
+    --primary: #651E1F;
+    --primary-light: #8b4b4c;
+    --primary-foreground: #ffffff;
+    --muted: #f3eee9;
+    --muted-foreground: #5c4e4d;
+    --border-muted: #dcd2cd;
+}
+.hero-embed .text-center { text-align: center; }
+.hero-embed .max-w-7xl { max-width: 80rem; }
+.hero-embed .mx-auto { margin-left: auto; margin-right: auto; }
+.hero-embed .font-serif { font-family: Georgia, 'Times New Roman', serif; }
+.hero-embed .font-bold { font-weight: 700; }
+.hero-embed .font-semibold { font-weight: 600; }
+.hero-embed .text-5xl { font-size: 3rem; line-height: 1; }
+.hero-embed .text-6xl { font-size: 3.75rem; line-height: 1; }
+.hero-embed .text-7xl { font-size: 4.5rem; line-height: 1; }
+.hero-embed .text-8xl { font-size: 6rem; line-height: 1; }
+.hero-embed .text-xl { font-size: 1.25rem; }
+.hero-embed .text-2xl { font-size: 1.5rem; }
+.hero-embed .text-sm { font-size: 0.875rem; }
+.hero-embed .text-white { color: #ffffff; }
+.hero-embed .text-white/80 { color: rgba(255, 255, 255, 0.8); }
+.hero-embed .text-white/90 { color: rgba(255, 255, 255, 0.9); }
+.hero-embed .bg-white { background-color: #ffffff; }
+.hero-embed .space-y-10 > * + * { margin-top: 2.5rem; }
+.hero-embed .space-y-8 > * + * { margin-top: 2rem; }
+.hero-embed .px-4 { padding-left: 1rem; padding-right: 1rem; }
+.hero-embed .py-16 { padding-top: 4rem; padding-bottom: 4rem; }
+.hero-embed .pt-4 { padding-top: 1rem; }
+.hero-embed .pt-8 { padding-top: 2rem; }
+.hero-embed .gap-4 { gap: 1rem; }
+.hero-embed .gap-6 { gap: 1.5rem; }
+.hero-embed .gap-12 { gap: 3rem; }
+@media (min-width: 768px) {
+    .hero-embed .md\:py-32 { padding-top: 8rem; padding-bottom: 8rem; }
+    .hero-embed .md\:px-8 { padding-left: 2rem; padding-right: 2rem; }
+    .hero-embed .md\:text-6xl { font-size: 3.75rem; }
+    .hero-embed .md\:text-2xl { font-size: 1.5rem; }
+    .hero-embed .md\:col-span-3 { grid-column: span 3; }
+    .hero-embed .md\:col-span-2 { grid-column: span 2; }
+    .hero-embed .md\:grid-cols-5 { grid-template-columns: repeat(5, 1fr); }
+    .hero-embed .md\:flex-row { flex-direction: row; }
+    .hero-embed .md\:justify-end { justify-content: flex-end; }
+}
+@media (min-width: 1024px) {
+    .hero-embed .lg\:text-7xl { font-size: 4.5rem; }
+}
+.hero-embed .grid { display: grid; }
+.hero-embed .flex { display: flex; }
+.hero-embed .flex-col { flex-direction: column; }
+.hero-embed .flex-row { flex-direction: row; }
+.hero-embed .flex-wrap { flex-wrap: wrap; }
+.hero-embed .items-center { align-items: center; }
+.hero-embed .justify-center { justify-content: center; }
+.hero-embed .flex-shrink-0 { flex-shrink: 0; }
+.hero-embed .relative { position: relative; }
+.hero-embed .w-full { width: 100%; }
+.hero-embed .max-w-sm { max-width: 24rem; }
+.hero-embed .max-w-md { max-width: 28rem; }
+.hero-embed .min-h-screen { min-height: 100vh; }
+.hero-embed .h-6 { height: 1.5rem; }
+.hero-embed .w-6 { width: 1.5rem; }
+.hero-embed .overflow-hidden { overflow: hidden; }
+.hero-embed .rounded-lg { border-radius: 0.5rem; }
+.hero-embed .shadow-2xl { box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
+.hero-embed .object-cover { object-fit: cover; }
+.hero-embed .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+}
+.hero-embed .btn-lg {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+}
+.hero-embed .btn-primary {
+    background-color: #ffffff;
+    color: #651E1F;
+}
+.hero-embed .btn-primary:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+.hero-embed .btn-secondary {
+    background-color: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+}
+.hero-embed .btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.hero-embed .leading-tight { line-height: 1.25; }
+.hero-embed .leading-relaxed { line-height: 1.625; }
+
+/* ----- CTA SECTION STYLES ----- */
+.cta-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 4rem 2rem;
+    box-sizing: border-box;
+    background: #651E1F;
+    color: #ffffff;
+}
+.cta-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+.cta-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+.cta-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+    max-width: 700px;
+}
+.register-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem 3rem;
+    background-color: #ffffff;
+    color: #651E1F;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    font-size: 1.25rem;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.register-btn:hover {
+    background-color: rgba(255, 255, 255, 0.95);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+@media (max-width: 768px) {
+    .cta-container {
+        padding: 1rem;
+    }
+    .cta-title {
+        font-size: 2.5rem;
+    }
+    .cta-subtitle {
+        font-size: 1.25rem;
+    }
+    .register-btn {
+        padding: 1rem 2.5rem;
+        font-size: 1.125rem;
+    }
+}
+
+/* ----- PRICING SECTION STYLES ----- */
+.pricing-embed * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.pricing-embed {
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    color: #1f2937;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    padding: 0 1rem;
+    background: #f8fafc;
+}
+.pricing-embed {
+    --primary: #3b82f6;
+    --primary-foreground: #ffffff;
+    --muted: #f1f5f9;
+    --muted-foreground: #64748b;
+    --border-muted: #e2e8f0;
+}
+.pricing-embed .text-center { text-align: center; }
+.pricing-embed .max-w-2xl { max-width: 42rem; }
+.pricing-embed .mx-auto { margin-left: auto; margin-right: auto; }
+.pricing-embed .font-serif { font-family: Georgia, 'Times New Roman', serif; }
+.pricing-embed .font-bold { font-weight: 700; }
+.pricing-embed .font-semibold { font-weight: 600; }
+.pricing-embed .text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+.pricing-embed .text-lg { font-size: 1.125rem; }
+.pricing-embed .text-sm { font-size: 0.875rem; }
+.pricing-embed .text-xs { font-size: 0.75rem; }
+.pricing-embed .text-3xl { font-size: 1.875rem; font-weight: 700; }
+.pricing-embed .text-muted-foreground { color: var(--muted-foreground); }
+.pricing-embed .text-primary { color: var(--primary); }
+.pricing-embed .bg-primary { background-color: var(--primary); }
+.pricing-embed .text-primary-foreground { color: var(--primary-foreground); }
+.pricing-embed .space-y-4 > * + * { margin-top: 1rem; }
+.pricing-embed .space-y-3 > * + * { margin-top: 0.75rem; }
+.pricing-embed .space-y-2 > * + * { margin-top: 0.5rem; }
+.pricing-embed .mb-16 { margin-bottom: 4rem; }
+.pricing-embed .mb-12 { margin-bottom: 3rem; }
+.pricing-embed .mb-6 { margin-bottom: 1.5rem; }
+.pricing-embed .mb-3 { margin-bottom: 0.75rem; }
+.pricing-embed .mb-2 { margin-bottom: 0.5rem; }
+.pricing-embed .mt-4 { margin-top: 1rem; }
+.pricing-embed .mt-1 { margin-top: 0.25rem; }
+.pricing-embed .mt-0\.5 { margin-top: 0.125rem; }
+.pricing-embed .grid {
+    display: grid;
+    gap: 1.5rem;
+}
+@media (min-width: 768px) {
+    .pricing-embed .md\:grid-cols-4 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .pricing-embed .md\:text-5xl {
+        font-size: 3rem;
+        line-height: 1;
+    }
+}
+.pricing-embed .card {
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    border: 1px solid var(--border-muted);
+    transition: box-shadow 0.2s ease;
+    position: relative;
+    background: linear-gradient(to bottom right, white, #f9fafb);
+    width: 100%;
+    min-width: 0;
+}
+.pricing-embed .card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+}
+.pricing-embed .gradient-basic { background: linear-gradient(145deg, #f0f9ff, #e6f0fa); }
+.pricing-embed .gradient-conference { background: linear-gradient(145deg, #f0fdf4, #dcfce7); }
+.pricing-embed .gradient-full { background: linear-gradient(145deg, #fef3c7, #fde68a); }
+.pricing-embed .gradient-premium { background: linear-gradient(145deg, #f1f0ff, #e0e7ff); }
+.pricing-embed .badge-popular {
+    position: absolute;
+    top: -0.75rem;
+    left: 1.5rem;
+    background-color: var(--primary);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 1rem;
+    border-radius: 9999px;
+    white-space: nowrap;
+}
+.pricing-embed .flex-items-start {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+.pricing-embed .check-icon {
+    width: 1rem;
+    height: 1rem;
+    color: var(--primary);
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+}
+.pricing-embed .bg-muted\/50 {
+    background-color: rgba(241, 245, 249, 0.5);
+}
+.pricing-embed .rounded-lg {
+    border-radius: 0.75rem;
+}
+.pricing-embed .p-8 {
+    padding: 2rem;
+}
+.pricing-embed .grid-cols-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+@media (min-width: 768px) {
+    .pricing-embed .md\:grid-cols-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+.pricing-embed ul {
+    list-style: none;
+}
+.pricing-embed .list-disc {
+    padding-left: 1.25rem;
+    list-style-type: disc;
+}
+.pricing-embed h5 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+</style>
+
+<!-- HERO SECTION -->
+<div class="hero-embed">
+    <section class="px-4 py-16 md:px-8 min-h-screen flex items-center" style="background-color: #651E1F;">
+        <div class="max-w-7xl mx-auto w-full">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <!-- Left Column - Text (3/5 width) -->
+                <div class="md:col-span-3 space-y-10">
+                    <div class="space-y-8">
+                        <div class="hero-logo" style="width: 100%; max-width: 900px;">
+                            <img src="https://mcusercontent.com/586325cac2d38d2d2412ce5ec/images/fd2552f7-20a7-0f15-975d-5a835c64098b.png" 
+                                 alt="Heritage Without Borders 2026" 
+                                 style="width: 100%; height: auto; display: block;">
+                        </div>
+                        <p class="text-xl md:text-2xl text-white/90 leading-relaxed">
+                            A rare opportunity to elevate your art conservation practice to global standards with Kate Seymour, Chair of ICOM-CC.
+                        </p>
+                        <div class="flex flex-row max-sm:flex-col gap-4 pt-4">
+                            <button class="btn btn-lg btn-primary" onclick="document.getElementById('cta-section')?.scrollIntoView({ behavior: 'smooth' })">
+                                Register Now
+                            </button>
+                            <button class="btn btn-lg btn-secondary" onclick="document.getElementById('pricing-section')?.scrollIntoView({ behavior: 'smooth' })">
+                                View Pricing
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Three feature items (responsive row) -->
+                    <div class="flex flex-row flex-wrap gap-6 pt-8">
+                        <div class="flex gap-4 items-center">
+                            <i class="fas fa-calendar-alt w-6 h-6 text-white flex-shrink-0"></i>
+                            <div>
+                                <h3 class="font-semibold text-white">April 20–25, 2026</h3>
+                                <p class="text-sm text-white/80">Philippines</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-center">
+                            <i class="fas fa-calendar-week w-6 h-6 text-white flex-shrink-0"></i>
+                            <div>
+                                <h3 class="font-semibold text-white">6-Day Program</h3>
+                                <p class="text-sm text-white/80">Conference, lectures & closing</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 items-center">
+                            <i class="fas fa-map-marker-alt w-6 h-6 text-white flex-shrink-0"></i>
+                            <div>
+                                <h3 class="font-semibold text-white">Multiple Venues</h3>
+                                <p class="text-sm text-white/80">QC MICE, National Library</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column - Image (2/5 width) -->
+                <!-- <div class="md:col-span-2 flex justify-center md:justify-end">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/photo-OcHzB8qcP9goC61qg0gQ86GMJKXssQ.png"
+                        alt="Kate Seymour, Chair of ICOM-CC"
+                        class="w-full max-w-sm md:max-w-md rounded-lg shadow-2xl object-cover"
+                        style="max-width: 100%; height: auto;">
+                </div> -->
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- CTA SECTION -->
+<div class="cta-container">
+    <section id="cta-section" class="cta-section">
+        <h1 class="cta-title">Ready to Join Us?</h1>
+        <p class="cta-subtitle">
+            Join Kate Seymour, Chair of ICOM-CC, for an exclusive art conservation experience in the Philippines.
+        </p>
+        
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdO44REglVVDze1fn1FEZuTbVipJwF8lM8UttCXjXmJNu7A6w/viewform" 
+           target="_blank" 
+           class="register-btn">
+            Register Now
+        </a>
+    </section>
+</div>
+
+<!-- PRICING SECTION -->
+<div id="pricing-section" class="pricing-embed">
+    <!-- header -->
+    <div class="text-center space-y-4 mb-16">
+        <h2 class="text-4xl md:text-5xl font-serif font-bold">Pricing & Packages</h2>
+        <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Choose the package that best fits your conservation learning goals
+        </p>
+    </div>
+
+    <!-- card grid -->
+    <div class="grid md:grid-cols-4 gap-6 mb-12">
+        <!-- Basic -->
+        <div class="card gradient-basic relative">
+            <h3 class="text-lg font-semibold mb-2 mt-4">Conference Only</h3>
+            <div class="mb-6">
+                <span class="text-3xl font-bold">₱3,000</span>
+                <p class="text-xs text-muted-foreground mt-1">per person</p>
+            </div>
+            <div class="space-y-3">
+                <div class="flex-items-start"><i class="fas fa-check-circle check-icon"></i><span class="text-sm text-muted-foreground">April 20 Conference</span></div>
+                <div class="flex-items-start"><i class="fas fa-check-circle check-icon"></i><span class="text-sm text-muted-foreground">Full Day (9AM - 4PM)</span></div>
+                <div class="flex-items-start"><i class="fas fa-check-circle check-icon"></i><span class="text-sm text-muted-foreground">Lunch included</span></div>
+            </div>
+        </div>
+        <!-- Conference -->
+        <div class="card gradient-conference relative">
+            <h3 class="text-lg font-semibold mb-2 mt-4">Conference + 3 Lectures</h3>
+            <div class="mb-6">
+                <span class="text-3xl font-bold">₱4,500</span>
+                <p class="text-xs text-muted-foreground mt-1">per person</p>
+            </div>
+            <div class="space-y-3">
+                <div class="flex-items-start"><i class="fas fa-check-circle check-icon"></i><span class="text-sm text-muted-foreground">April 20 Conference</span></div>
+                <div class="flex-items-start"><i class="fas fa-check-circle check-icon"></i><span class="text-sm text-muted-foreground">3 Lecture sessions</span></div>
+                <div class="flex-items-start"><i class="fas fa-check-circle check-icon"></i><span class="text-sm text-muted-foreground">Certificate of completion</span></div>
+            </div>
+        </div>
+
+        <!-- Premium -->
+        <div class="card gradient-premium relative">
+            <h3 class="text-lg font-semibold mb-2 mt-4">Conference + 5 Lectures</h3>
+            <div class="mb-6">
+                <span class="text-3xl font-bold">₱5,000</span>
+                <p class="text-xs text-muted-foreground mt-1">per person</p>
+            </div>
+            <div class="space-y-3">
+                <div class="flex-items-start"><i class="fas fa-check-circle check-icon"></i><span class="text-sm text-muted-foreground">April 20 Conference</span></div>
+                <div class="flex-items-start"><i class="fas fa-check-circle check-icon"></i><span class="text-sm text-muted-foreground">5 Lecture sessions</span></div>
+                <div class="flex-items-start"><i class="fas fa-check-circle check-icon"></i><span class="text-sm text-muted-foreground">Certificate of completion</span></div>
+            </div>
+        </div>
+                    <!-- Full (most popular) -->
+        <div class="card gradient-full relative">
+            <h3 class="text-lg font-semibold mb-2 mt-4">HWB Full Package</h3>
+            <div class="mb-6">
+                <span class="text-3xl font-bold">₱35,000</span>
+                <p class="text-xs text-muted-foreground mt-1">per person</p>
+            </div>
+            <div class="space-y-3">
+                <div class="flex-items-start"><i class="fas fa-check-circle check-icon"></i><span class="text-sm text-muted-foreground">Conference + 5 Lectures</span></div>
+                <div class="flex-items-start"><i class="fas fa-check-circle check-icon"></i><span class="text-sm text-muted-foreground">15-day workshop (June 2026)</span></div>
+                <div class="flex-items-start"><i class="fas fa-check-circle check-icon"></i><span class="text-sm text-muted-foreground">Signed certificate</span></div>
+                <div class="flex-items-start"><i class="fas fa-check-circle check-icon"></i><span class="text-sm text-muted-foreground">Limited Slots</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- discounts -->
+    <div class="bg-muted/50 rounded-lg p-8 mb-12">
+        <h4 class="font-semibold text-lg mb-6">Special Discounts Available</h4>
+        <div class="grid-cols-2 md:grid-cols-2">
+            <div>
+                <h5 class="font-semibold mb-3">Seniors & PWD</h5>
+                <ul class="space-y-2 text-sm text-muted-foreground list-disc">
+                    <li>20% discount on Conference + Lectures</li>
+                    <li>5% discount on Full Package</li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-semibold mb-3">Group Discounts</h5>
+                <ul class="space-y-2 text-sm text-muted-foreground list-disc">
+                    <li>5-9 participants: 15% discount</li>
+                    <li>10+ participants: 20% discount</li>
+                    <li>Full Package: 5% group discount</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Font Awesome 6 (free) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
